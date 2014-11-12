@@ -151,6 +151,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1155325376}
+  - 122: {fileID: 1155325377}
   m_Layer: 0
   m_Name: LaunchPoint
   m_TagString: Untagged
@@ -170,6 +171,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1325086452}
   m_RootOrder: 3
+--- !u!122 &1155325377
+Halo:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155325375}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4290756543
+  m_Size: 1
 --- !u!1 &1223807471
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76146dba9e6e949898e763e5f49073c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabProjectile: {fileID: 100000, guid: 65329e64ab1554b158fe542aff5342f0, type: 2}
+  velocityMult: 4
 --- !u!1 &1944837196
 GameObject:
   m_ObjectHideFlags: 0
