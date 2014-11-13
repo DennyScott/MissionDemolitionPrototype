@@ -2,30 +2,42 @@
 using System.Collections;
 
 public class Slingshot : MonoBehaviour {
+	static public Slingshot			S;
 	public GameObject		prefabProjectile;
 	public float			velocityMult = 4f;
-	private GameObject 		launchPoint;
+	private GameObject 		_launchPoint;
 	private Vector3			launchPos;
 	private GameObject		projectile;
 	private bool			aimingMode;
 
 
 	void Awake() {
+		S = this;
 		Transform  launchPointTrans = transform.Find ("LaunchPoint");
-		launchPoint = launchPointTrans.gameObject;
-		launchPoint.SetActive(false);
+		_launchPoint = launchPointTrans.gameObject;
+		_launchPoint.SetActive(false);
 		launchPos = launchPointTrans.position;
+	}
+
+	public GameObject launchPoint {
+		get {
+			return (_launchPoint);
+		}
+
+		set {
+			_launchPoint = value;
+		}
 	}
 
 	void OnMouseEnter() {
 //		print ("Slingshot:OnMouseEnter()");
-		launchPoint.SetActive (true);
+		_launchPoint.SetActive (true);
 
 	}
 
 	void OnMouseExit() {
 //		print ("Slingbot:OnMouseExit()");
-		launchPoint.SetActive(false);
+		_launchPoint.SetActive(false);
 	}
 
 	void OnMouseDown() {
